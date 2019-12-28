@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<h1 th:text="${user.name}">大家好</h1><br>
+<h1 th:text="${user.age}">大家好</h1><br>
+<h1 th:text="${user.friend.name}">大家好</h1><br>
+
+<hr color="red">
+<!--  ognl表达式，Object graphic navigate language, * 引用-->
+<h1 th:object="${user}">
+<p> <span th:text="*{name}">name</span></p>
+<p> <span th:text="*{age}">name</span></p>
+<p> <span th:text="*{friend.name}">name</span></p>
+</h1>
+<hr color="green">
+<!--字符串切割-->
+<!--<h2 th:object="${user}">-->
+<!--    <p> <span th:text="*{name.split(‘ ’)[0]}">Firstname</span> </p>-->
+<!--    <p> <span th:text="*{name.split(‘ ’)[1]}">Firstname</span> </p>-->
+<!--</h2>-->
+<hr>
+<!--Switch case-->
+<h1 th:switch="${user.name}">
+<span th:case="亚东科技">他是亚东科技的CEO</span>
+<span th:case="*">帅哥</span>
+</h1>
+
+</body>
+</html>

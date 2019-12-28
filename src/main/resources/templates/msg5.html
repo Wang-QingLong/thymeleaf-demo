@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<!--通常写法-->
+<span th:text="'我想说'+${msg}+'在年底之前'">emmmm</span><br>
+<!--Thymeleaf简化写法-->
+<span th:text="|我想说:${msg}在年底之前|"></span><br>
+<!--三元表达式：有的时候，我们取一个值可能为空，这个时候需要做非空判断，可以使用 表达式 ?: 默认值简写-->
+<span th:text="${msg}? 不需要这个值 :'二狗子'"></span>
+
+<!--使用th:if 或者 th:unless ，两者的意思恰好相反  -->
+<span th:if="5>3">我爱你中国</span>
+<span th:unless="5>4">我爱你毛爷爷</span>
+</body>
+</html>

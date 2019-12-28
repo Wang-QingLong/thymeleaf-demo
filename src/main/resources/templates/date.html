@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<!--#+语法，，thymeleaf内置封装了很多方法-->
+<h1 th:text="${#dates.format(date,'yyyy-MM-dd')}">时间</h1>
+
+
+<hr>
+<!--字面值: 使用一对'引用的内容就是字符串字面值-->
+
+<h1 th:text="'${#dates.format(date)}'">时间</h1>
+<!--布尔字面值-->
+
+<hr>
+
+<h1>
+   <p><span th:if="true">填写的是true</span></p>
+   <p><span th:if="false">填写的是false</span></p>
+
+</h1>
+
+</body>
+</html>
